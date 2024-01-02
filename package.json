@@ -1,0 +1,48 @@
+{
+  "name": "@mapado/install-deps-from-pr",
+  "description": "Install dependencies from PR description",
+  "version": "1.0.0",
+  "private": false,
+  "type": "module",
+  "main": "dist/index.js",
+  "exports": {
+    ".": "./dist/index.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "types": "dist/types/index.d.ts",
+  "scripts": {
+    "build": "run-p build:*",
+    "lint": "run-p lint:*",
+    "prepublishOnly": "run-s lint build",
+    "build:module": "rollup --config",
+    "build:types": "tsc --emitDeclarationOnly",
+    "lint:types": "tsc --noEmit",
+    "lint:eslint": "eslint . --fix"
+  },
+  "devDependencies": {
+    "npm-run-all": "4.1.5",
+    "prettier": "3.1.1",
+    "@babel/core": "7.23.7",
+    "@babel/plugin-proposal-class-properties": "7.18.6",
+    "@babel/plugin-proposal-object-rest-spread": "7.20.7",
+    "@babel/preset-env": "7.23.7",
+    "@babel/preset-react": "7.23.3",
+    "@babel/preset-typescript": "7.23.3",
+    "rollup": "4.9.2",
+    "@rollup/plugin-babel": "6.0.4",
+    "@rollup/plugin-commonjs": "25.0.7",
+    "@rollup/plugin-node-resolve": "15.2.3",
+    "typescript": "5.3.3",
+    "eslint": "8.56.0",
+    "eslint-config-airbnb": "19.0.4",
+    "eslint-config-prettier": "9.1.0",
+    "eslint-plugin-import": "2.29.1",
+    "eslint-plugin-jsx-a11y": "6.8.0",
+    "eslint-plugin-react": "7.33.2",
+    "eslint-plugin-react-hooks": "4.6.0",
+    "@typescript-eslint/eslint-plugin": "6.17.0",
+    "@typescript-eslint/parser": "6.17.0"
+  }
+}
