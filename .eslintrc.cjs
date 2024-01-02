@@ -78,6 +78,8 @@ module.exports = {
     // https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/prefer-default-export.md
     'import/prefer-default-export': 'off',
 
+    'import/no-extraneous-dependencies': 'off',
+
     // === default overriden rules ===
 
     // Require braces in arrow function body
@@ -113,6 +115,8 @@ module.exports = {
         next: ['const', 'let', 'var'],
       },
     ],
+
+    'no-console': 'off',
   },
 
   settings: {

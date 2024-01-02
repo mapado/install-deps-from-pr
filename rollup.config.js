@@ -1,9 +1,10 @@
 /* eslint-disable import/no-extraneous-dependencies */
-import { defineConfig } from 'rollup';
 import fs from 'fs';
 import babel from '@rollup/plugin-babel';
 import commonjs from '@rollup/plugin-commonjs';
+import json from '@rollup/plugin-json';
 import resolve from '@rollup/plugin-node-resolve';
+import { defineConfig } from 'rollup';
 
 const pkg = JSON.parse(fs.readFileSync('./package.json'));
 
@@ -14,6 +15,7 @@ export default defineConfig({
   output: [{ file: 'dist/index.js', format: 'es', sourcemap: true }],
 
   plugins: [
+    json(),
     commonjs({
       include: 'node_modules/**',
     }),
@@ -27,6 +29,7 @@ export default defineConfig({
   ],
   external: [
     ...Object.keys(pkg.peerDependencies || {}),
+    ...Object.keys(pkg.optionalDependencies || {}),
     ...Object.keys(pkg.dependencies || {}),
   ],
 });
