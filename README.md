@@ -10,17 +10,11 @@ Create the following file in your root package repository `install-deps-from-pr.
 const config = {
   currentRepo: 'owner/repo-name', // the current repository name
   prDescriptionRegex: /### Dépendances \(pull requests\) :([\s\S]*?)###/, // A regex that matches a block in your github description
-  repos: {
-    // an object of valid repositories containing the repository name as key, and an object with "install" and "build" scripts as value
-    'owner/cart': {
-      install: 'yarn install',
-      build: 'yarn build && yarn build:types',
-    },
-    'owner/tools': {
-      install: 'yarn install',
-      build: 'yarn build',
-    },
-  },
+  repos: [
+    // an array of valid repositories that will be searched for this PR
+    'owner/cart',
+    'owner/tools',
+  ],
 };
 
 export default config;
@@ -57,9 +51,8 @@ It will create a `install-deps-from-pr` directory and install thoses dependencie
 
 Then it will launch the following commands:
 
-- yarn install
-- yarn build
-- yarn build:types
+- `yarn install`
+- `yarn build`
 
 And copy the folder into the `node_modules` directory
 

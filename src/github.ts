@@ -14,9 +14,7 @@ export function isAValidDependency(
   owner: string,
   repo: string,
 ): boolean {
-  const validRepos = Object.keys(config.repos);
-
-  return validRepos.includes(`${owner}/${repo}`);
+  return config.repos.includes(`${owner}/${repo}`);
 }
 
 export async function getPullRequestBody(

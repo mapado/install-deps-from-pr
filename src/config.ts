@@ -9,13 +9,7 @@ export type Config = {
   currentRepo: string;
   writeDir?: string;
   prDescriptionRegex: RegExp;
-  repos: Record<
-    string,
-    {
-      install: string;
-      build: string;
-    }
-  >;
+  repos: Array<string>;
 };
 
 export const CONFIG_EXTENSIONS = ['.ts', '.mjs', '.js'];

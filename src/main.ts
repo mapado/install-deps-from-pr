@@ -14,6 +14,9 @@ import {
 import { cwd } from './input';
 import { LogLevel, log } from './log';
 
+const INSTALL_SCRIPT = 'yarn install';
+const BUILD_SCRIPT = 'yarn build';
+
 // taken from https://github.com/mapado/watch-module/blob/15a2a4c727a0beb605809490fb50a8fe799c7510/src/build.ts#L11
 const execAsync = promisify(exec);
 
@@ -87,8 +90,8 @@ export default async function main(): Promise<void> {
 
       const workingDir = await downloadAndExtractPR(pullRequest, writeDir);
 
-      const { install: installScript, build: buildScript } =
-        config.repos[repoWithOwner];
+      const installScript = INSTALL_SCRIPT;
+      const buildScript = BUILD_SCRIPT;
 
       log(
         `${repoWithOwner}: running install script… "${installScript}"`,
