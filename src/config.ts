@@ -8,7 +8,7 @@ import { LogLevel, log } from './log';
 export type Config = {
   currentRepo: string;
   writeDir?: string;
-  prDescriptionRegex: RegExp;
+  prDescriptionRegex: RegExp | Array<RegExp>;
   repos: Array<string>;
 };
 

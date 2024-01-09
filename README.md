@@ -9,12 +9,15 @@ Create the following file in your root package repository `install-deps-from-pr.
 ```js
 const config = {
   currentRepo: 'owner/repo-name', // the current repository name
-  prDescriptionRegex: /### Dépendances \(pull requests\) :([\s\S]*?)###/, // A regex that matches a block in your github description
-  repos: [
-    // an array of valid repositories that will be searched for this PR
-    'owner/cart',
-    'owner/tools',
+
+  // A regex or an array of regex that matches a block in your github description
+  prDescriptionRegex: [
+    /### Dependencies([\s\S]*?)\n#/,
+    /### Dependencies([\s\S]*?)$/,
   ],
+
+  // an array of valid repositories that will be searched for this PR
+  repos: ['owner/cart', 'owner/tools'],
 };
 
 export default config;

@@ -36,7 +36,23 @@ export function getPullRequestLinks(
   pullBody: string,
 ): Array<string> | undefined {
   // find in markdown the context of the block with title `### Dépendances (pull requests) :`
-  const match = pullBody.match(config.prDescriptionRegex);
+
+  const prDescriptionRegexList: Array<RegExp> = Array.isArray(
+    config.prDescriptionRegex,
+  )
+    ? config.prDescriptionRegex
+    : [config.prDescriptionRegex];
+
+  let match;
+
+  // eslint-disable-next-line no-restricted-syntax
+  for (const prDescriptionRegex of prDescriptionRegexList) {
+    match = pullBody.match(prDescriptionRegex);
+
+    if (match) {
+      break;
+    }
+  }
 
   if (!match) {
     log('no dependencies block found');
