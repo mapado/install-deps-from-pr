@@ -44,7 +44,7 @@ async function importTypescriptConfig(filePath: string) {
 
   fs.remove(tmpFile);
 
-  return importedConfig;
+  return importedConfig.default;
 }
 
 export async function getConfig(): Promise<Required<Config>> {
