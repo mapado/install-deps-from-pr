@@ -1,3 +1,7 @@
-## 1.0.0
+## 2.0.2
 
-Initial version
+- Fix issue with TS configuration (ts transpiler does make a weird double default export)
+
+## 2.0.1
+
+Initial version (why not start at 2.0.1 !)
