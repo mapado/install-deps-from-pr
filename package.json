@@ -2,7 +2,6 @@
   "name": "@mapado/install-deps-from-pr",
   "description": "Install dependencies from PR description",
   "version": "2.0.2",
-  "private": false,
   "type": "module",
   "main": "dist/index.js",
   "exports": {
@@ -60,5 +59,6 @@
   },
   "watch-module": {
     "command": "yarn build:module && yarn build:types"
-  }
+  },
+  "packageManager": "yarn@4.0.2"
 }

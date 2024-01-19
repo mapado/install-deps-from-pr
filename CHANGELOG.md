@@ -1,5 +1,6 @@
 ## 2.0.2
 
+
 - Fix issue with TS configuration (ts transpiler does make a weird double default export)
 
 ## 2.0.1
