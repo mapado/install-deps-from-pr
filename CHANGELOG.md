@@ -1,5 +1,10 @@
-## 2.0.2
+# Changelog
 
+## 2.0.3
+
+- [Internal] Upgrade to yarn 4
+
+## 2.0.2
 
 - Fix issue with TS configuration (ts transpiler does make a weird double default export)
 
