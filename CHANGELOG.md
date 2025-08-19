@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.1.0
+
+- add types to exports [#1](https://github.com/mapado/install-deps-from-pr/pull/1) by [@jdeniau](https://github.com/jdeniau)
+
 ## 2.0.3
 
 - [Internal] Upgrade to yarn 4
