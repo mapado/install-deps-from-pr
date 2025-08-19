@@ -5,7 +5,10 @@
   "type": "module",
   "main": "dist/index.js",
   "exports": {
-    ".": "./dist/index.js"
+    ".": {
+        "types": "./dist/types/src/index.d.ts",
+        "default": "./dist/index.js"
+    }
   },
   "bin": "./dist/index.js",
   "files": [
